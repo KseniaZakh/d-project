@@ -15,25 +15,25 @@
   }
 
 body {
-  width: 100%;
+  width: calc(100% + 17px);
   overflow-x: hidden;
   }
 
 .header__logo {
-  width: 190px;
-  margin: 2% auto;
+  margin-left: auto;
+  margin-right: auto;
   }
 
   .header {
     display: flex;
     flex-direction: column;
     position: relative;
-    background: url('../images/football_desktop.jpg') no-repeat 50% 50% #0a0e34;
+    background-color: #0a0e34;
     background-size: cover;
     color: #ffffff;
     width: 100%;
-    height: calc(100vw * 0.5);
     z-index: 5;
+    box-sizing: border-box;
   }
 
   .header__head {
@@ -43,18 +43,6 @@ body {
     text-transform: uppercase;
     font-family: 'OpenSans-Bold', sans-serif;
     margin: auto 0;
-  }
-
-  @media (min-width: 961px) and (max-width: 1920px) {
-    .header__head {
-      font-size: calc((100vw + 60rem)/30);
-    }
-  }
-
-  @media (min-width: 1921px) {
-    .header__head {
-    font-size: 90px;
-    }
   }
 
   .header__head_line1 {
@@ -70,45 +58,33 @@ body {
   .header__apps {
     display: flex;
     justify-content: center;
-    margin-bottom: 5.5%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .header__apps_box {
-    width: 310px;
-    height: 77px;
     background-color: #5e42b0;
     border-radius: 40px;
   }
 
   .header__apps_a {
     display: flex;
-    align-items: center;
-    flex-shrink: 0;
+    justify-content: center;
     color: inherit;
-    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
-    padding-left: 3em;
-    padding-top: 1em;
   }
 
   .header__apps_section {
-    display: inline-block;
     padding-left: 1em;
   }
 
-  .header__apps_box:first-child {
-    margin-right: 50px;
-  }
-
-  .header__apps_apple_icon, .header__apps_google_icon {
-    display: inline-block;
-    width: 52px;
-    height: 50px;
+  .header__apps_google_icon,
+  .header__apps_apple_icon {
     fill: #ffffff;
   }
 
-  .header__apps_line2 {
+    .header__apps_line2 {
     display: block;
     font-family: 'OpenSans-Bold', sans-serif;
     font-weight: bold;
@@ -117,6 +93,144 @@ body {
   .header__apps_line1 {
       display: block;
     font-family: 'OpenSans-Regular', sans-serif;
+  }
+
+  /* /////ШИРИНА БОЛЬШЕ 1920 //// */
+  @media (min-width: 1921px) {
+    .header__head {
+    font-size: 90px;
+    }
+  }
+
+  /* ////ИНТЕРВАЛ от 961 до 1920 ///// */
+  @media (min-width: 961px) and (max-width: 1920px) {
+    .header__head {
+      font-size: calc((100vw + 60rem)/30);
+    }
+  }
+
+  /* //////ШИРИНА от 961 ////// */
+  @media (min-width: 961px) {
+    .header {
+        background-image: url('../images/football_desktop.jpg');
+        height: calc(100vw * 0.5);
+    }
+
+    .header__apps_box:first-child {
+      margin-right: 50px;
+    }
+
+    .header__apps {
+      margin-bottom: 5.5%;
+    }
+
+    .header__apps_box {
+      width: 310px;
+      height: 77px;
+    }
+
+    .header__apps_apple_icon, .header__apps_google_icon {
+      width: 52px;
+      height: 50px;
+    }
+
+    .header__logo {
+      width: 190px;
+      margin-top: 2%;
+    }
+  }
+
+  /* /////ИНТЕРВАЛ от 641 до 960 //// */
+
+  @media (min-width: 641px) and (max-width: 960px) {
+    .header {
+      background-image: url('../images/football_768.jpg');
+      height: calc(100vw * 1.25);
+    }
+
+    .header__logo {
+      width: 204px;
+      margin-top: 4%;
+    }
+
+    .header__apps_box:first-child {
+      margin-right: 4%;
+    }
+
+    .header__apps {
+      margin-bottom: 12%;
+    }
+
+    .header__apps_apple_icon, .header__apps_google_icon {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  /* /////ШИРИНА от 641 ///// */
+  @media (min-width: 641px) {
+
+    .header__apps_box {
+      width: 310px;
+      height: 77px;
+    }
+
+    .header__apps_a {
+      font-size: 14px;
+      margin: 1.5em auto;
+    }
+
+    .header__apps_apple_icon {
+      margin-top: -1em;
+    }
+
+    .header__apps_google_icon {
+        margin-top: -0.5em;
+    }
+  }
+
+  /* /////ИНТЕРВАЛ ОТ 320 до 640///// */
+    @media (min-width: 320px) and (max-width: 640px) {
+
+      .header {
+          background-image: url('../images/football_320.jpg');
+          height: calc(100vw * 1.77);
+      }
+
+      .header__logo {
+        width: 133px;
+        margin-top: 10%;
+      }
+
+      .header__apps {
+        flex-direction: column;
+        margin-bottom: 26%;
+      }
+
+      .header__apps_box {
+        width: calc(100vw * 0.09 + 252px);
+      }
+
+      .header__apps_a {
+        font-size: calc(100vw * 0.02 + 1.6px);
+        margin: 1em auto;
+      }
+
+      .header__apps_box:first-child {
+        margin-bottom: 14px;
+      }
+
+      .header__apps_apple_icon, .header__apps_google_icon {
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+  /* /////ИНТЕРВАЛ ОТ 320 до 960///// */
+  @media (min-width: 320px) and (max-width: 960px) {
+    .header__head {
+      font-size: calc(100vw * 0.056 + 10px);
+    }
   }
 
   /* ATHLETS, PLAYERS */
