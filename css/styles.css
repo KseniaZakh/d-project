@@ -15,8 +15,9 @@
   }
 
 body {
-  width: calc(100% + 17px);
-  overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
   }
 
 .header__logo {
@@ -55,42 +56,51 @@ body {
     box-sizing: border-box;
   }
 
-  .header__apps {
+  .header__apps,
+  .footer__apps {
     display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .header__apps_box {
-    background-color: #5e42b0;
+  .header__apps_box,
+  .footer__apps_box {
+	background-color: #5e42b0;
     border-radius: 40px;
-  }
-
-  .header__apps_a {
-    display: flex;
+  	display: flex;
     justify-content: center;
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
   }
 
-  .header__apps_section {
-    padding-left: 1em;
-  }
-
   .header__apps_google_icon,
-  .header__apps_apple_icon {
+  .header__apps_apple_icon,
+  .footer__apps_apple_icon,
+  .footer__apps_google_icon {
+	  display: block;
     fill: #ffffff;
+	margin-top: auto;
+	margin-bottom: auto;
+ 	}
+
+	.header__apps_section,
+	.footer__apps_section {
+	  margin-left: 1em;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	}
+
+	.header__apps_line2,
+	.footer__apps_line2 {
+    	display: block;
+    	font-family: 'OpenSans-Bold', sans-serif;
+    	font-weight: bold;
   }
 
-    .header__apps_line2 {
-    display: block;
-    font-family: 'OpenSans-Bold', sans-serif;
-    font-weight: bold;
-  }
-
-  .header__apps_line1 {
+  .header__apps_line1,
+  .footer__apps_line1 {
       display: block;
     font-family: 'OpenSans-Regular', sans-serif;
   }
@@ -113,10 +123,11 @@ body {
   @media (min-width: 961px) {
     .header {
         background-image: url('../images/football_desktop.jpg');
-        height: calc(100vw * 0.5);
+        height: 50vw;
     }
 
-    .header__apps_box:first-child {
+    .header__apps_box:first-child,
+	.footer__apps_box:first-child {
       margin-right: 50px;
     }
 
@@ -124,17 +135,21 @@ body {
       margin-bottom: 5.5%;
     }
 
-    .header__apps_box {
+    .header__apps_box,
+	.footer__apps_box {
       width: 310px;
       height: 77px;
     }
 
-    .header__apps_apple_icon, .header__apps_google_icon {
+    .header__apps_apple_icon,
+	.header__apps_google_icon,
+	.footer__apps_apple_icon,
+    .footer__apps_google_icon {
       width: 52px;
       height: 50px;
     }
 
-    .header__logo {
+	.header__logo {
       width: 190px;
       margin-top: 2%;
     }
@@ -145,7 +160,7 @@ body {
   @media (min-width: 641px) and (max-width: 960px) {
     .header {
       background-image: url('../images/football_768.jpg');
-      height: calc(100vw * 1.25);
+      height: 125vw;
     }
 
     .header__logo {
@@ -153,7 +168,8 @@ body {
       margin-top: 4%;
     }
 
-    .header__apps_box:first-child {
+    .header__apps_box:first-child,
+	.footer__apps_box:first-child {
       margin-right: 4%;
     }
 
@@ -161,40 +177,33 @@ body {
       margin-bottom: 12%;
     }
 
-    .header__apps_apple_icon, .header__apps_google_icon {
+    .header__apps_apple_icon,
+	.header__apps_google_icon,
+	.footer__apps_apple_icon,
+    .footer__apps_google_icon  {
       width: 45px;
       height: 45px;
     }
-  }
+
+ }
 
   /* /////ШИРИНА от 641 ///// */
   @media (min-width: 641px) {
 
-    .header__apps_box {
-      width: 310px;
+	 .header__apps_box,
+	.footer__apps_box {
+	  width: 310px;
       height: 77px;
-    }
-
-    .header__apps_a {
       font-size: 14px;
-      margin: 1.5em auto;
     }
-
-    .header__apps_apple_icon {
-      margin-top: -1em;
-    }
-
-    .header__apps_google_icon {
-        margin-top: -0.5em;
-    }
-  }
+}
 
   /* /////ИНТЕРВАЛ ОТ 320 до 640///// */
     @media (min-width: 320px) and (max-width: 640px) {
 
       .header {
           background-image: url('../images/football_320.jpg');
-          height: calc(100vw * 1.77);
+          height: 177vw;
       }
 
       .header__logo {
@@ -202,34 +211,37 @@ body {
         margin-top: 10%;
       }
 
-      .header__apps {
+      .header__apps,
+	  .footer__apps {
         flex-direction: column;
         margin-bottom: 26%;
       }
 
-      .header__apps_box {
-        width: calc(100vw * 0.09 + 252px);
-      }
-
-      .header__apps_a {
-        font-size: calc(100vw * 0.02 + 1.6px);
+      .header__apps_box,
+	  .footer__apps_box {
+        width: calc(9vw + 252px);
+       	font-size: calc(2vw + 1.6px);
         margin: 1em auto;
       }
 
-      .header__apps_box:first-child {
+      .header__apps_box:first-child,
+	  .footer__apps_box:first-child {
         margin-bottom: 14px;
       }
 
-      .header__apps_apple_icon, .header__apps_google_icon {
+      .header__apps_apple_icon,
+	  .header__apps_google_icon,
+	  .footer__apps_apple_icon,
+      .footer__apps_google_icon  {
         width: 23px;
         height: 23px;
-      }
-    }
+	  }
+	}
 
   /* /////ИНТЕРВАЛ ОТ 320 до 960///// */
   @media (min-width: 320px) and (max-width: 960px) {
     .header__head {
-      font-size: calc(100vw * 0.056 + 10px);
+      font-size: calc(5.6vw + 10px);
     }
   }
 
@@ -539,56 +551,82 @@ body {
   .appeal {
     display: flex;
     flex-wrap: wrap;
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
   }
 
+  .appeal__info {
+	/* position: relative; */
+  }
+
+  .appeal_image {
+	max-width: 100%;
+  }
+
+		/* ////ШИРИНА ОТ 961 ///// */
 @media (min-width: 961px){
   .appeal__info, .appeal__imgbox {
     width: 50%;
     }
 
     .appeal__info {
-      padding-left: 10%;
-      box-sizing: border-box;
+		position: relative;
+      	box-sizing: border-box;
+		padding-top: 13.5%;
     }
+
+	.appeal__info:nth-child(2),
+	.appeal__info:nth-child(6) {
+		padding-left: 6.5%;
+	}
+
+	.appeal__info:nth-child(3) {
+		padding-left: 10%;
+	}
 
     .appeal__info_title {
       font-family: 'OpenSans-Bold', sans-serif;
-      font-size: 70px;
+      font-size: 80px;
+	  line-height: 90px;
       color: #e7e7e7;
       text-transform: uppercase;
-    }
+	  margin-top: 0;
+	  margin-bottom: 0;
+   }
 
     .appeal__info_text {
       font-family: 'OpenSans-Regular', sans-serif;
       font-size: 24px;
-      padding-right: 40%;
+	  line-height: 28px;
+      /* padding-right: 40%; */
     }
 
     .appeal__number {
       position: absolute;
-      width: 170px;
-      height: 155px;
+      width: calc(5.4vw + 63px);
+      height: calc(4.1vw + 76px);
       color: #ffffff;
       font-family: 'OpenSans-Bold', sans-serif;
       font-size: 24px;
+	  line-height: calc(4.1vw + 76px);
       text-align: center;
-      padding-top: 40px;
-      box-sizing: border-box;
       background-color: #5e42b0;
     }
 
     .appeal__number.one, .appeal__number.three {
       top: 30%;
-      left: -85px;
+      left: -5vw;
     }
 
     .appeal__number.two {
       top: 30%;
-      right: -85px;
+      right: -5vw;
     }
 
     .appeal__number p {
       position: relative;
+	  margin: 0;
     }
 
     .appeal__number p:before {
@@ -597,26 +635,27 @@ body {
       width: 24px;
       position: absolute;
       border-bottom: 5px solid #8f7bc8;
-      top: 33px;
-      left: 73px;
+      top: calc(50% + 16px);
+      left: calc(50% - 12px);
       border-radius: 5px;
     }
   }
 
-  .appeal__info {
-    position: relative;
-  }
+  	/* ////ШИРИНА ОТ 641 ДО 960///// */
+@media (min-width: 641px) and (max-width: 960px) {
 
-  .appeal_image {
-    max-width: 100%;
-  }
+}
+	/* /////ШИРИНА ОТ 320 ДО 640//// */
+@media (min-width: 320px) and (max-width: 640px) {
+
+}
 
   /* FOOTER */
 
   footer {
     display: flex;
     flex-direction: column;
-    position: relative;
+    flex-shrink: 0;
     background-color: #0a0e34;
     color: #ffffff;
     width: 100%;
@@ -626,27 +665,23 @@ body {
   .footer {
     display: flex;
     text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	flex-shrink: 0;
   }
 
   .footer__title_logo {
-    width: 130px;
-    height: 136px;
     box-sizing: border-box;
     background-color: #5e42b0;
-    border-radius: 40px;
-    padding: 1rem;
-  }
-
-  .footer__title_icon {
-    width: 104px;
-    height: 90px;
+    padding: 1em 0.5em;
   }
 
   .footer__head {
-    max-width: 720px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    padding-left: 35px;
+	  display: flex;
+	  flex-direction: column;
+    	max-width: 706px;
+    	box-sizing: border-box;
   }
 
   .footer_title {
@@ -659,62 +694,44 @@ body {
     color: #a496ca;
   }
 
+  .footer__logo {
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: auto;
+  }
+
   .footer__apps {
-    display: flex;
-    justify-content: center;
+	  flex-shrink: 0;
   }
+		/* /////ШИРИНА ОТ 1921//// */
+@media (min-width: 1921px) {
+	    }
 
-  .footer__apps_box {
-    background-color: #5e42b0;
-    border-radius: 40px;
-  }
+		/* /////ШИРИНА ОТ 961 до 1920//// */
+@media (min-width: 961px) and (max-width: 1920px) {
 
-  .footer__apps_a {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding-top: 1em;
-    padding-left: 3em;
-  }
-
-  .footer__apps_section {
-    display: inline-block;
-    padding-left: 1em;
-  }
-
-  .footer__apps_apple_icon, .footer__apps_google_icon {
-    display: inline-block;
-    fill: #ffffff;
-  }
-
-  .footer__apps_line2 {
-    display: block;
-    font-family: 'OpenSans-Bold', sans-serif;
-    font-weight: bold;
-  }
-
-  .footer__apps_line1 {
-      display: block;
-    font-family: 'OpenSans-Regular', sans-serif;
-  }
-
-  @media (min-width: 961px) {
+		}
+		/* ///ШИРИНА ОТ 961 /// */
+@media (min-width: 961px) {
     footer {
       background: url('../images/football_field_desktop.jpg') no-repeat 50% 50% #0a0e34;
       background-size: cover;
-      height: calc(100vw * 0.5);
+      height: 50vw;
     }
 
     .footer {
-      margin: 11% auto 7%;
-    }
+		flex-direction: row;
+		justify-content: center;
+     	margin-top: 12%;
+	 }
 
-    .footer_title {
-      font-size: 80px;
-    }
+    .footer__title_logo {
+		margin-right: 35px;
+	}
+
+	.footer__head {
+		align-items: flex-start;
+	}
 
     .footer_slogan {
       font-size: 30px;
@@ -722,25 +739,117 @@ body {
 
     .footer__logo {
       width: 190px;
-      margin: 13.5% auto 2%;
+	  margin-bottom: 2.6%;
       }
-
-      .footer__apps_box {
-        width: 310px;
-        height: 77px;
-      }
-
-      .footer__apps_a {
-        font-size: 14px;
-      }
-
-      .footer__apps_box:first-child {
-        margin-right: 50px;
-      }
-
-      .footer__apps_apple_icon, .footer__apps_google_icon {
-        width: 52px;
-        height: 50px;
-      }
-
   }
+
+	/* ////ШИРИНА ОТ 641 ДО 960//// */
+ @media (min-width: 641px) and (max-width: 960px) {
+	 footer {
+	   background: url('../images/football_field_768.jpg') no-repeat 50% 50% #0a0e34;
+	   background-size: cover;
+	   height: 124vw;
+	 }
+
+	 .footer {
+ 		flex-direction: column;
+ 		justify-content: center;
+      	margin-top: 16%;
+ 	 }
+
+	 .footer__title_logo {
+		margin-left: auto;
+	 	margin-right: auto;
+ 		margin-bottom: 10.4%;
+ 	}
+
+	 .footer__logo {
+       width: 206px;
+ 		margin-bottom: 2.6%;
+   }
+}
+
+@media (min-width: 768px) {
+	.footer_title {
+      font-size: 80px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+	.footer_slogan {
+	  font-size: 36px;
+	}
+}
+ 		/* * ////ШИРИНА ОТ 641 //// */
+ @media (min-width: 641px) {
+
+	 .footer__title_icon {
+       width: 104px;
+       height: 90px;
+     }
+
+	 .footer__title_logo {
+		 font-size: 24px;
+		 width: 130px;
+	     height: 136px;
+		 border-radius: 40px;
+	 }
+ }
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.footer_title {
+      font-size: 10vw;
+    }
+
+	.footer_slogan {
+	  font-size: 4.5vw;
+	}
+}
+ 		/* ////ШИРИНА ОТ 320 ДО 640//// */
+@media (min-width: 320px) and (max-width: 640px) {
+	footer {
+   		background: url('../images/football_field_320.jpg') no-repeat 50% 50% #0a0e34;
+   		background-size: cover;
+   		height: 178vw;
+ 	}
+
+	.footer {
+	   flex-direction: column;
+	   justify-content: center;
+	   margin-top: 30.6%;
+	}
+
+	.footer__title_logo {
+		margin-left: auto;
+		margin-right: auto;
+	   margin-bottom: 18%;
+   }
+
+	.footer__title_icon {
+      width: 58px;
+      height: 50px;
+    }
+
+	.footer__title_logo {
+		font-size: 12px;
+		width: 71px;
+		height: 74px;
+		border-radius: 16px;
+	}
+
+	.footer_slogan {
+      font-size: 14x;
+    }
+
+	.footer__logo {
+      width: 134px;
+	  margin-bottom: 2%;
+      }
+}
+
+			/* ////ШИРИНА ОТ 320 ДО 960//// */
+ @media (min-width: 320px) and (max-width: 960px) {
+	 .footer__head {
+ 		align-items: center;
+ 	}
+ }
