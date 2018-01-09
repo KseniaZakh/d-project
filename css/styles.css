@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'OpenSans-Regular';
     src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
@@ -260,12 +261,18 @@ body {
     justify-content: center;
   }
 
-   h2  {
-    font-family: 'OpenSans-Bold', sans-serif;
-    font-size: 80px;
-    text-transform: uppercase;
-    color: #e7e7e7;
-  }
+ @media (min-width: 961px) {
+	 .athlets > h2,
+	 .players > h2 {
+	   font-size: 80px;
+	 }
+}
+
+	h2  {
+ 		font-family: 'OpenSans-Bold', sans-serif;
+ 		text-transform: uppercase;
+ 		color: #e7e7e7;
+	}
 
    h3 {
     position: relative;
@@ -556,14 +563,53 @@ body {
 	margin-right: auto;
   }
 
-  .appeal__info {
-	/* position: relative; */
-  }
-
-  .appeal_image {
+   .appeal_image {
 	max-width: 100%;
+	max-height: 730px;
   }
 
+  .appeal__info {
+	  position: relative;
+	  box-sizing: border-box;
+  }
+
+  .appeal__info_text {
+	font-family: 'OpenSans-Regular', sans-serif;
+	}
+
+	.appeal__number {
+      position: absolute;
+    color: #ffffff;
+      font-family: 'OpenSans-Bold', sans-serif;
+     text-align: center;
+      background-color: #5e42b0;
+    }
+
+	.appeal__number p {
+      position: relative;
+	  margin: 0;
+    }
+
+	.appeal__number p:before {
+      display: block;
+      content: "";
+     position: absolute;
+      border-bottom: 5px solid #8f7bc8;
+        border-radius: 5px;
+    }
+
+	/* ////ШИРИНА ОТ 1920 ///// */
+@media (min-width: 1921px) {
+		.appeal__info_title {
+			font-size: 80px;
+	  	  line-height: 90px;
+		}
+
+		.appeal__info_text {
+			font-size: 24px;
+  	  		line-height: 28px;
+  		}
+}
 		/* ////ШИРИНА ОТ 961 ///// */
 @media (min-width: 961px){
   .appeal__info, .appeal__imgbox {
@@ -571,8 +617,6 @@ body {
     }
 
     .appeal__info {
-		position: relative;
-      	box-sizing: border-box;
 		padding-top: 13.5%;
     }
 
@@ -582,37 +626,25 @@ body {
 	}
 
 	.appeal__info:nth-child(3) {
-		padding-left: 10%;
+		padding-left: 9.5%;
 	}
 
     .appeal__info_title {
-      font-family: 'OpenSans-Bold', sans-serif;
-      font-size: 80px;
+      font-size: calc(50vw * 0.083);
 	  line-height: 90px;
-      color: #e7e7e7;
-      text-transform: uppercase;
-	  margin-top: 0;
-	  margin-bottom: 0;
+       margin-top: 0;
+	  margin-bottom: 11%;
    }
 
     .appeal__info_text {
-      font-family: 'OpenSans-Regular', sans-serif;
-      font-size: 24px;
-	  line-height: 28px;
-      /* padding-right: 40%; */
-    }
+      font-size: calc(50vw * 0.025);
+  }
 
     .appeal__number {
-      position: absolute;
       width: calc(5.4vw + 63px);
       height: calc(4.1vw + 76px);
-      color: #ffffff;
-      font-family: 'OpenSans-Bold', sans-serif;
-      font-size: 24px;
-	  line-height: calc(4.1vw + 76px);
-      text-align: center;
-      background-color: #5e42b0;
-    }
+      line-height: calc(4.1vw + 76px);
+ }
 
     .appeal__number.one, .appeal__number.three {
       top: 30%;
@@ -624,30 +656,112 @@ body {
       right: -5vw;
     }
 
-    .appeal__number p {
-      position: relative;
-	  margin: 0;
-    }
-
     .appeal__number p:before {
-      display: block;
-      content: "";
-      width: 24px;
-      position: absolute;
-      border-bottom: 5px solid #8f7bc8;
-      top: calc(50% + 16px);
+     top: calc(50% + 16px);
       left: calc(50% - 12px);
-      border-radius: 5px;
-    }
+     }
   }
 
-  	/* ////ШИРИНА ОТ 641 ДО 960///// */
-@media (min-width: 641px) and (max-width: 960px) {
+/* ////ШИРИНА ОТ 641 ///// */
+@media (min-width: 641px) {
+	.appeal__number {
+		 font-size: 24px;
+	}
 
+	.appeal__number p:before {
+		 width: 24px;
+	}
+}
+
+/* ////ШИРИНА ОТ 641 ДО 960///// */
+
+@media (min-width: 641px) and (max-width: 960px) {
+	.appeal__info_title {
+		font-size: 80px;
+		line-height: 60px;
+		margin-top: 0;
+		margin-bottom: 32px;
+	}
+
+	.appeal__info_text {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	.appeal__info {
+		padding: 11% 11% 4%;
+		}
+
+		.appeal__number {
+	      width: 115px;
+	      height: 115px;
+	      line-height: 115px;
+		  top: -85px;
+		  left: calc(4% + 57px);
+	 }
+
+	 .appeal__number p:before {
+		 top: 72px;
+		 left: 45px;
+	 }
+}
+
+  	/* ////ШИРИНА ОТ 320 ДО 960///// */
+@media (min-width: 320px) and (max-width: 960px) {
+	.appeal__info, .appeal__imgbox {
+      width: 100%;
+      }
+
+	.appeal__info_text br {
+		display: none;
+	}
+
+		.appeal__info:nth-child(3) {
+			order: 1;
+		}
+		.appeal__imgbox:nth-child(5) {
+			order: 2;
+		}
+		.appeal__info:nth-child(6) {
+			order: 3;
+		}
 }
 	/* /////ШИРИНА ОТ 320 ДО 640//// */
 @media (min-width: 320px) and (max-width: 640px) {
+	.appeal__info_title {
+		font-size: 28px;
+		line-height: 34px;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
 
+	.appeal__info_text {
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.appeal__info {
+		padding: 11% 9% 20%;
+		}
+
+		.appeal__info:nth-child(2) {
+				padding-right: 22%;
+		}
+
+	.appeal__number {
+		font-size: 14px;
+	  width: 70px;
+	  height: 70px;
+	  line-height: 70px;
+	  top: -57px;
+	  left: 5%;
+ }
+
+  .appeal__number p:before {
+	 width: 16px;
+	 top: 45px;
+	 left: 27px;
+ }
 }
 
   /* FOOTER */
