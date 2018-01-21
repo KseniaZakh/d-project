@@ -1,31 +1,31 @@
 
-@font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
-         url('./fonts/OpenSans-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	@font-face {
+    	font-family: 'OpenSans-Regular';
+    	src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+         	url('../fonts/OpenSans-Regular.woff') format('woff');
+    	font-weight: normal;
+    	font-style: normal;
+ 	}
+
+	@font-face {
+    	font-family: 'OpenSans-Bold';
+    	src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+         	url('../fonts/OpenSans-Bold.woff') format('woff');
+    	font-weight: normal;
+    	font-style: normal;
   }
 
-@font-face {
-    font-family: 'OpenSans-Bold';
-    src: url('./fonts/OpenSans-Bold.woff2') format('woff2'),
-         url('./fonts/OpenSans-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: relative;
+		margin: 0;
+	}
 
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	position: relative;
-	margin: 0;
-}
-
-h1 {
-	text-indent: -9999px;
-}
+ 	h1 {
+		text-indent: -9999px;
+	}
 
   .header__head,
   h2,
@@ -36,7 +36,7 @@ h1 {
   		text-transform: uppercase;
   		font-family: 'OpenSans-Bold', sans-serif;
   		font-weight: bold;
-}
+	}
 
 	p,
 	.header__apps_line1,
@@ -280,9 +280,9 @@ h1 {
   /* ATHLETS, PLAYERS */
 
   .athlets, .players {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+	  display: flex;
+	flex-direction: column;
+	position: relative;
 	width: 100%;
 	overflow: hidden;
   }
@@ -293,16 +293,16 @@ h1 {
  }
 
 	.athlets__container_title,
-  .players__container_title {
-	  position: relative;
-      color: #c1c1c1;
-	  padding-left: 25px;
-	   margin-bottom: 0;
+ 	.players__container_title {
+	 	position: relative;
+     	color: #c1c1c1;
+	 	padding-left: 25px;
+	  	margin-bottom: 0;
   }
 
   .athlets__container:nth-child(4) p,
   .players__container:nth-child(4) p {
-  color: #ffffff;
+  		color: #ffffff;
   }
 
   .players__container_title:before,
@@ -368,16 +368,16 @@ h1 {
 @media (min-width: 961px) {
    .athlets__header,
    .players__header {
-	 font-size: 80px;
-	 margin-top: 4.6vw;
-	margin-bottom: 2vw;
+		font-size: 80px;
+		margin-top: 4.6vw;
+		margin-bottom: 2vw;
    }
 
 	.athlets__container_info,
-   .players__container_info {
-	   font-size: 20px;
-	   line-height: 28px;
-	    margin-top: 24px;
+	.players__container_info {
+		font-size: 20px;
+		line-height: 28px;
+		margin-top: 24px;
    }
 
    .athlets__container_title,
@@ -387,8 +387,8 @@ h1 {
    }
 
    .athlets__header,
-   .athlets__container_info,
-   .athlets__container_title {
+   .athlets__container_title,
+   .athlets__container_info {
 	   margin-left: 52.5%;
 	   margin-right: 2%;
    }
@@ -619,7 +619,7 @@ h1 {
 	.players__container_title,
 	.players__container_info {
 		margin-left: 6%;
- 	   margin-right: 6%;
+ 	  	margin-right: 6%;
 	}
 
 	.athlets__header,
@@ -764,12 +764,12 @@ h1 {
       background-color: #5e42b0;
     }
 
-	.appeal__number p {
+	.appeal__number span {
       position: relative;
 	  margin: 0;
     }
 
-	.appeal__number p:before {
+	.appeal__number span:before {
       display: block;
       content: "";
      position: absolute;
@@ -850,17 +850,17 @@ h1 {
       line-height: calc(4.1vw + 76px);
  }
 
-    .appeal__number.one, .appeal__number.three {
+    .appeal__number.left {
       top: 30%;
       right: 45vw;
     }
 
-    .appeal__number.two {
+    .appeal__number.right {
       top: 30%;
       left: 45vw;
     }
 
-    .appeal__number p:before {
+    .appeal__number span:before {
      top: calc(50% + 16px);
       left: calc(50% - 12px);
      }
@@ -873,7 +873,7 @@ h1 {
 		 font-size: 24px;
 	}
 
-	.appeal__number p:before {
+	.appeal__number span:before {
 		 width: 24px;
 	}
 }
@@ -918,7 +918,7 @@ h1 {
 		  left: 4%;
 	 }
 
-	 .appeal__number p:before {
+	 .appeal__number span:before {
 		 top: 72px;
 		 left: 48px;
 	 }
@@ -935,13 +935,13 @@ h1 {
   	}
 
 	.appeal__info:nth-child(3) {
-			order: 1;
+		order: 1;
 		}
-		.appeal__imgbox:nth-child(5) {
-			order: 2;
+	.appeal__imgbox:nth-child(5) {
+		order: 2;
 		}
-		.appeal__info:nth-child(6) {
-			order: 3;
+	.appeal__info:nth-child(6) {
+		order: 3;
 		}
 }
 	/* /////ШИРИНА ОТ 320 ДО 640//// */
@@ -975,7 +975,7 @@ h1 {
 	  	left: 6%;
  }
 
-  .appeal__number p:before {
+  .appeal__number span:before {
 	 width: 16px;
 	 top: 45px;
 	 left: 27px;
